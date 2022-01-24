@@ -14,7 +14,7 @@
 			</fieldset>
 		</form>
 	`;
-	class ColoredBoxStylingPanel extends HTMLElement {
+	class GeoMapStyling extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -39,4 +39,4 @@
 		return this._shadowRoot.getElementById("styling_color").value;
 	}
  }
-customElements.define("com-sap-sample-coloredbox-styling", ColoredBoxStylingPanel);
+customElements.define("com-dp-geomap-styling", GeoMapStyling);
