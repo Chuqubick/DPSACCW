@@ -13,18 +13,16 @@
 		body {
 		  background: #fff;
 		}
+		
+		#map {
+			height: 500px;
+			width: 500px;
+		}
 		</style>
-	
-	<div class="container">
-		  <div class="row">
-		    <div class="col-md-4 col-sm-4">
-		        <svg viewBox="0 0 1000 500">   
-     			 <div id="regions_div" style="width: 900px; height: 500px;"></div>
-         	        </svg>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+		
+		<body>
+		<div id="map"></div>
+		</body>
     ';
 
     class GeoMap extends HTMLElement {
@@ -32,7 +30,7 @@
           let shadowRoot = this.attachShadow({mode: "open"});
           shadowRoot.appendChild(template.content.cloneNode(true));
           this.$style = shadowRoot.querySelector('style');
-          this.$svg = shadowRoot.querySelector('svg');
+          this.$body = shadowRoot.querySelector('body');
           this.addEventListener("click", event => {
             var event = new Event("onClick");
             this.dispatchEvent(event);  });
@@ -40,35 +38,8 @@
     }
 
     render(){
-      import google from https://www.gstatic.com/charts/loader.js
-      google.charts.load('current', {
-             'packages':['geomap'],
-             // Note: you will need to get a mapsApiKey for your project.
-             // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-             'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-           });
-           google.charts.setOnLoadCallback(drawMap);
-    }
-
-    drawMap(){
-      var data = google.visualization.arrayToDataTable([
-                ['Country', 'Popularity'],
-                ['Germany', 200],
-                ['United States', 300],
-                ['Brazil', 400],
-                ['Canada', 500],
-                ['France', 600],
-                ['RU', 700]
-              ]);
-
-              var options = {};
-              options['dataMode'] = 'regions';
-
-              var container = document.getElementById('regions_div');
-              var geomap = new google.visualization.GeoMap(container);
-
-              geomap.draw(data, options);
-            };
+	var location = {lat: -25.393, lng: 131.044};
+	var map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: location });
     }
 
     onCustomWidgetBeforeUpdate(changedProperties) {
