@@ -195,5 +195,5 @@
             this._props = {};
         }
     }
-    customElements.define("com-dp-geomap", ColoredBox);
+    customElements.define("com-dp-geomap", GeoMap);
 })();
