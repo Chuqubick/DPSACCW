@@ -36,12 +36,7 @@
             this.dispatchEvent(event);  });
           this._props = {};
     }
-
-    render(){
-	var location = {lat: -25.393, lng: 131.044};
-	var map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: location });
-    }
-
+	    
     onCustomWidgetBeforeUpdate(changedProperties) {
         this._props = { ...this._props, ...changedProperties };
     }
