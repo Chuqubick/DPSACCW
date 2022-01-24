@@ -9,22 +9,21 @@
 			border-style: solid;
 			display: block;
 		}
-     
+
 		body {
 		  background: #fff;
-		}	
+		}
 		</style>
-		
-    <body>
+    <svg>
       <div id="regions_div" style="width: 900px; height: 500px;"></div>
-    </body>
+    </svg>
     ';
 
     class GeoMap extends HTMLElement {
         constructor() {
           let shadowRoot = this.attachShadow({mode: "open"});
           shadowRoot.appendChild(template.content.cloneNode(true));
-          this.$style = shadowRoot.querySelector('style');			
+          this.$style = shadowRoot.querySelector('style');
           this.$svg = shadowRoot.querySelector('svg');
           this.addEventListener("click", event => {
             var event = new Event("onClick");
@@ -41,7 +40,6 @@
              'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
            });
            google.charts.setOnLoadCallback(drawMap);
-
     }
 
     drawMap(){
@@ -54,17 +52,17 @@
                 ['France', 600],
                 ['RU', 700]
               ]);
-      
+
               var options = {};
               options['dataMode'] = 'regions';
-      
+
               var container = document.getElementById('regions_div');
               var geomap = new google.visualization.GeoMap(container);
-      
+
               geomap.draw(data, options);
             };
     }
-    
+
     onCustomWidgetBeforeUpdate(changedProperties) {
         this._props = { ...this._props, ...changedProperties };
     }
