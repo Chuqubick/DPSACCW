@@ -33,7 +33,7 @@
   </body>
 </html>`;
 
-    class ColoredBox extends HTMLElement {
+    class GeoMap extends HTMLElement {
         constructor() {
             super();
             let shadowRoot = this.attachShadow({ mode: "open" });
@@ -56,5 +56,5 @@
             }
         }
     }
-    customElements.define("com-sap-sample-coloredbox", ColoredBox);
+    customElements.define("com-dp-geomap", GeoMap);
 })();
