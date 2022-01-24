@@ -1,6 +1,6 @@
 (function () {
     let template = document.createElement("template");
-    template.innerHTML = '
+    template.innerHTML =  `
 		<style>
 		:host {
 			border-radius: 10px;
@@ -22,7 +22,7 @@
 		}
 		<div id="chartdiv"></div>
 		</style>
-    ';
+     `;
 
     class GeoMap extends HTMLElement {
         constructor() {
