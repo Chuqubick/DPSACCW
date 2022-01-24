@@ -20,7 +20,7 @@
 		}
 		</style>
  `	;
- class ColoredBoxBuilderPanel extends HTMLElement {
+ class GeoMapBuilder extends HTMLElement {
 	constructor() {
 		super();
 		this._shadowRoot = this.attachShadow({mode: "open"});
@@ -46,5 +46,5 @@
 		return this._shadowRoot.getElementById("builder_opacity").value;
 	}
  }
- customElements.define("com-sap-sample-coloredbox-builder", ColoredBoxBuilderPanel);
+ customElements.define("com-dp-geomap-builder", GeoMapBuilder);
  })();
