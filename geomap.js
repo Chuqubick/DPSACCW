@@ -31,9 +31,9 @@
     }
     
     render(){
-     	import * as am4core from "@amcharts/amcharts4/core";
-	import * as am4maps from "@amcharts/amcharts4/maps";
-	import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+     	import * as am4core from "https://cdn.amcharts.com/lib/4/core.js";
+	import * as am4maps from "https://cdn.amcharts.com/lib/4/maps.js";
+	import am4geodata_worldLow from "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
 	    
 	let map = am4core.create("map", am4maps.MapChart);
     }
