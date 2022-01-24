@@ -14,9 +14,17 @@
 		  background: #fff;
 		}
 		</style>
-    <svg>
-      <div id="regions_div" style="width: 900px; height: 500px;"></div>
-    </svg>
+	
+	<div class="container">
+		  <div class="row">
+		    <div class="col-md-4 col-sm-4">
+		        <svg viewBox="0 0 1000 500">   
+     			 <div id="regions_div" style="width: 900px; height: 500px;"></div>
+         	        </svg>
+		      </div>
+		    </div>
+		  </div>
+		</div>
     ';
 
     class GeoMap extends HTMLElement {
