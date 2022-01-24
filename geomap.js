@@ -60,7 +60,7 @@
         this._props = { ...this._props, ...changedProperties };
     }
     onCustomWidgetAfterUpdate(changedProperties) {
-
+	this.render();
     }
     customElements.define("com-dp-geomap", GeoMap);
 })();
