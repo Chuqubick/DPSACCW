@@ -11,18 +11,15 @@
 		}
 
 		body {
-		  background: #fff;
-		}
-		
-		#map {
-			height: 500px;
-			width: 500px;
+			background: #fff;
+			
+			.map svg{
+		  		max-width: 100%;
+		  	}
 		}
 		</style>
 		
-		<body>
-		<div id="map"></div>
-		</body>
+		<div class="map"> <svg viewBox="0 0 500 500"></svg></div>
     ';
 
     class GeoMap extends HTMLElement {
@@ -30,11 +27,16 @@
           let shadowRoot = this.attachShadow({mode: "open"});
           shadowRoot.appendChild(template.content.cloneNode(true));
           this.$style = shadowRoot.querySelector('style');
-          this.$body = shadowRoot.querySelector('body');
+          this.$svg = shadowRoot.querySelector('svg');
           this.addEventListener("click", event => {
             var event = new Event("onClick");
             this.dispatchEvent(event);  });
           this._props = {};
+    }
+    
+    render(){
+    	
+    
     }
 	    
     onCustomWidgetBeforeUpdate(changedProperties) {
