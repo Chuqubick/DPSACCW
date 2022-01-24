@@ -36,6 +36,9 @@
     }
     
     render(){
+	import * as am4core from "https://cdn.amcharts.com/lib/4/core.js";
+	import * as am4maps from "https://cdn.amcharts.com/lib/4/maps.js";
+	import * as am4geodata_worldLow from "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
 	var chart = am4core.create("chartdiv", am4maps.MapChart);
 	chart.geodata = am4geodata_worldLow;
 	chart.projection = new am4maps.projections.Orthographic();
