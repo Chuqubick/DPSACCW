@@ -36,19 +36,24 @@
     }
     
     render(){
-	  var am4core = document.createElement('script');
-    	  am4core.type = 'text/javascript';
-    	  am4core.src = "https://cdn.amcharts.com/lib/4/core.js";
-	  
-	  var am4maps = document.createElement('script');
-    	  am4maps.type = 'text/javascript';
-    	  am4maps.src = "https://cdn.amcharts.com/lib/4/maps.js";
+	  var test1 = document.createElement('script');
+    	  test1.type = 'text/javascript';
+    	  test1.src = "https://cdn.amcharts.com/lib/4/core.js";
 	    
+	  const am4core = require(test1);
+	    
+	  var test2 = document.createElement('script');
+    	  test2.type = 'text/javascript';
+    	  test2.src = "https://cdn.amcharts.com/lib/4/maps.js";
+	    
+	  const am4maps = require(test2);
 	  
-	  var am4geodata_worldLow = document.createElement('script');
-    	  am4geodata_worldLow.type = 'text/javascript';
-    	  am4geodata_worldLow.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
+	  var test3 = document.createElement('script');
+    	  test3.type = 'text/javascript';
+    	  test3.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
 	  
+	  const am4geodata_worldLow = require(test3);
+	    
 	var chart = am4core.create("chartdiv", am4maps.MapChart);
 	chart.geodata = am4geodata_worldLow;
 	chart.projection = new am4maps.projections.Orthographic();
