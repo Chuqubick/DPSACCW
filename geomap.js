@@ -51,9 +51,42 @@
     	  //test3.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
 	  //const am4geodata_worldLow = require(test3);
 	
-	import * as am4core from 'https://cdn.amcharts.com/lib/4/core.js';
-	import * as am4maps from 'https://cdn.amcharts.com/lib/4/maps.js';
-	import * as am4geodata_worldLow from 'https://cdn.amcharts.com/lib/4/geodata/worldLow.js';
+	  if(this._firstConnection === 0){
+	  	 var am4core = document.createElement('script');
+    	 	 am4core.type = 'text/javascript';
+    	 	 am4core.src = "https://cdn.amcharts.com/lib/4/core.js";
+		  
+		 var am4maps = document.createElement('script');
+    	  	 am4maps.type = 'text/javascript';
+    	  	 am4maps.src = "https://cdn.amcharts.com/lib/4/maps.js";  
+		  
+	  	var am4geodata_worldLow = document.createElement('script');
+    	  	am4geodata_worldLow.type = 'text/javascript';
+    	  	am4geodata_worldLow.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";		  
+		  
+		  async function LoadLibs(){
+		  	try{
+				await loadScript(am4core);
+				await loadScript(am4maps);
+				await loadScript(am4geodata_worldLow);
+			}catct(e){
+				alert(e);
+			}finally{
+				this._firstConnection = 1;
+			}
+		  
+		  
+		  }
+		  
+		  
+		  
+		  
+	  }
+	    
+	
+	//import * as am4core from 'https://cdn.amcharts.com/lib/4/core.js';
+	//import * as am4maps from 'https://cdn.amcharts.com/lib/4/maps.js';
+	//import * as am4geodata_worldLow from 'https://cdn.amcharts.com/lib/4/geodata/worldLow.js';
 	
 	var chart = am4core.create("chartdiv", am4maps.MapChart);
 	chart.geodata = am4geodata_worldLow;
