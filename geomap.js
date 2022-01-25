@@ -36,24 +36,25 @@
     }
     
     render(){
-	  var test1 = document.createElement('script');
-    	  test1.type = 'text/javascript';
-    	  test1.src = "https://cdn.amcharts.com/lib/4/core.js";
+	  //var test1 = document.createElement('script');
+    	  //test1.type = 'text/javascript';
+    	  //test1.src = "https://cdn.amcharts.com/lib/4/core.js";
+	  //const am4core = require(test1);
 	    
-	  const am4core = require(test1);
-	    
-	  var test2 = document.createElement('script');
-    	  test2.type = 'text/javascript';
-    	  test2.src = "https://cdn.amcharts.com/lib/4/maps.js";
-	    
-	  const am4maps = require(test2);
+	  //var test2 = document.createElement('script');
+    	  //test2.type = 'text/javascript';
+    	  //test2.src = "https://cdn.amcharts.com/lib/4/maps.js";  
+	  //const am4maps = require(test2);
 	  
-	  var test3 = document.createElement('script');
-    	  test3.type = 'text/javascript';
-    	  test3.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
-	  
-	  const am4geodata_worldLow = require(test3);
-	    
+	  //var test3 = document.createElement('script');
+    	  //test3.type = 'text/javascript';
+    	  //test3.src = "https://cdn.amcharts.com/lib/4/geodata/worldLow.js";
+	  //const am4geodata_worldLow = require(test3);
+	
+	import * as am4core from 'https://cdn.amcharts.com/lib/4/core.js';
+	import * as am4maps from 'https://cdn.amcharts.com/lib/4/maps.js';
+	import * as am4geodata_worldLow from 'https://cdn.amcharts.com/lib/4/geodata/worldLow.js';
+	
 	var chart = am4core.create("chartdiv", am4maps.MapChart);
 	chart.geodata = am4geodata_worldLow;
 	chart.projection = new am4maps.projections.Orthographic();
